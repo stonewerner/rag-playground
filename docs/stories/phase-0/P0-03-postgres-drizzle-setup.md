@@ -14,7 +14,8 @@ reviewable and reproducible.
 
 ## Scope
 
-- Provision the database (provider per open question Q1; Supabase recommended).
+- Provision a Supabase project (decided in Q1); region near Vercel functions and Pinecone
+  (`us-east-1`). Use it as plain Postgres only.
 - Dependencies: `drizzle-orm`, `postgres`; dev: `drizzle-kit`, `tsx` (ADR 0002).
 - `src/db/client.ts`: singleton client for serverless (reuse across invocations; `prepare: false`
   for transaction pooling).
@@ -33,9 +34,10 @@ reviewable and reproducible.
 - [ ] `/api/health` returns `db: "ok"` locally with a real database.
 - [ ] The client does not open a new pool per request (verified by reading the code path; comment
       explains the serverless reuse pattern).
-- [ ] If Supabase: confirm schema `app` is not exposed by the Data API (screenshot or note in the
-      story), and run the Supabase advisors once.
-- [ ] Q1 moved to "Resolved" in `docs/open-questions.md`; ADR 0003 updated with the provider.
+- [ ] Schema `app` is not exposed by the Supabase Data API (note in the story), and the Supabase
+      advisors have been run once with findings addressed or noted.
+- [ ] Connection strings for pooler (6543) and direct/session (5432) documented in `.env.example`
+      comments match what Supabase shows today.
 - [ ] `pnpm check` passes.
 
 ## Technical notes

@@ -1,6 +1,6 @@
 # ADR 0003: Postgres + Drizzle ORM
 
-**Status:** accepted (provider open: open-questions Q1, Supabase recommended) · **Date:** 2026-11-07
+**Status:** accepted · **Date:** 2026-11-07 · **Provider decided:** 2026-11-08 (Supabase, Q1)
 
 ## Context
 
@@ -16,7 +16,9 @@ prepared statements disabled for transaction pooling); migrations and scripts us
 (`DATABASE_URL_DIRECT`). Drizzle migrations are the only source of schema truth (no dashboard
 edits). Driver: `postgres` (postgres.js) unless the chosen provider requires otherwise.
 
-Recommended provider: Supabase (Postgres only). See Q1 for the tradeoffs with Neon.
+**Provider: Supabase**, used as plain Postgres (no Supabase Auth, Storage, or RLS policies). Agents
+may use the Supabase MCP connector to inspect tables and advisors; schema changes still go through
+Drizzle migrations only. Neon is the fallback (see open questions Q1).
 
 ## Alternatives considered
 

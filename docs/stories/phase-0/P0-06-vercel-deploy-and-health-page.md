@@ -13,7 +13,8 @@ As an interviewer, I want a live URL that works, so that I can see the project w
 
 ## Scope
 
-- Vercel project linked to the GitHub repo: preview deploys per PR, production on `main`.
+- Vercel project (Hobby) linked to `stonewerner/rag-playground` (Q10): preview deploys per PR,
+  production on `main`. Stone creates the project and enters secrets; the agent supplies the list.
 - Env vars set for Production and Preview (document which values differ; previews may share the
   dev database or use a separate one — decide and record).
 - Node version pinned (22.x) and function region near the DB and Pinecone (`us-east-1` if

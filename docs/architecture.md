@@ -18,8 +18,8 @@ flowchart LR
     PL[src/pipeline<br/>normalize · chunk · embed · retrieve · fuse · rerank · eval]
     CR[Cron: TTL cleanup]
   end
-  PG[(Postgres<br/>Drizzle, schema app)]
-  BL[(Blob storage<br/>S3-compatible)]
+  PG[(Supabase Postgres<br/>Drizzle, schema app)]
+  BL[(Cloudflare R2<br/>S3 API, originals)]
   PD[(Pinecone dense index<br/>dense_vector)]
   PS[(Pinecone sparse index<br/>sparse_embed)]
   PR[Pinecone rerank<br/>bge-reranker-v2-m3]
@@ -146,7 +146,7 @@ ADRs 0005, 0006, 0008.
 
 ## 5. Data model
 
-All tables live in the Postgres schema `app` (not `public`), so a hosted provider's auto-generated
+All tables live in the Postgres schema `app` (not `public`), so Supabase's auto-generated
 REST API does not expose them. Drizzle schema in `src/db/schema.ts`; migrations in `drizzle/`.
 Phase 0 creates the tables below; later phases add tables with their own migrations.
 
@@ -383,7 +383,7 @@ persisted on the run.
 - **Cookie:** `rp_session = <uuid>.<issuedAt>.<HMAC-SHA256(secret, uuid.issuedAt)>`, HttpOnly,
   Secure, SameSite=Lax. `proxy.ts` issues it when missing or invalid (no DB access in the proxy).
   The `sessions` row is created lazily on the first stateful action, so crawlers create no rows.
-- **Caps** (defaults in `src/lib/caps.ts`, overridable via env; values are an open question):
+- **Caps** (defaults in `src/lib/caps.ts`, overridable via env; confirmed 2026-11-08, open questions Q8):
 
 | Cap                                 | Default                      |
 | ----------------------------------- | ---------------------------- |

@@ -14,7 +14,8 @@ deleted the same way whatever the provider.
 
 ## Scope
 
-- Provision the bucket (provider per open question Q2) as private.
+- Provision a private Cloudflare R2 bucket (decided in Q2) and an R2 API token scoped to it with
+  Object Read & Write.
 - `src/lib/blob.ts`: `putObject(key, bytes, contentType)`, `getObject(key)`, `deleteObject(key)`,
   `deletePrefix(prefix)` (paginated list + delete). Key helpers:
   `originalKey(sessionId, documentId)`.
@@ -30,13 +31,13 @@ deleted the same way whatever the provider.
 - [ ] Put/get/delete round-trip works against the real bucket (manual script `scripts/blob-smoke.ts`).
 - [ ] `deletePrefix` deletes more than one page of objects (test with a fake client that pages).
 - [ ] Bucket is private (unauthenticated GET fails).
-- [ ] Q2 resolved in `docs/open-questions.md`; ADR 0004 updated.
+- [ ] R2 token is scoped to this bucket only; ADR 0004 records the client library choice.
 - [ ] `pnpm check` passes.
 
 ## Technical notes
 
 - R2 S3 API: https://developers.cloudflare.com/r2/api/s3/api/
-- Supabase Storage S3: https://supabase.com/docs/guides/storage/s3/compatibility
+- R2 API tokens: https://developers.cloudflare.com/r2/api/tokens/
 - aws4fetch: https://github.com/mhart/aws4fetch
 
 ## Test and eval plan

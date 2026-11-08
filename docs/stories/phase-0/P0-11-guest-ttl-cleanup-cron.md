@@ -36,7 +36,8 @@ the demo stays within quotas without manual work.
       prefix deletion, row deleted; unexpired session untouched; shared corpus untouched.
 - [ ] Namespace deletion failure leaves the row for retry.
 - [ ] Cron configured and verified once in production (Vercel cron log screenshot or note).
-- [ ] Open question Q7 (TTL) resolved; if Supabase, confirm the cron keeps the project from pausing.
+- [ ] TTL is 72 h after last activity (Q7, resolved); confirm the daily cron keeps the Supabase
+      project from pausing (check after a week, note here).
 - [ ] `pnpm check` passes.
 
 ## Technical notes

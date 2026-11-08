@@ -1,6 +1,6 @@
 # ADR 0022: Cost guardrails — caps, Postgres rate limits, caches, TTL cleanup
 
-**Status:** accepted (values open: open-questions Q7, Q8) · **Date:** 2026-11-07
+**Status:** accepted · **Date:** 2026-11-07 · **Defaults confirmed:** 2026-11-08 (Q7, Q8)
 
 ## Context
 

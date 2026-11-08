@@ -48,8 +48,8 @@ not the product.
 | ----------------- | ------------------------------------------------------------- | ---- |
 | App               | Next.js 16 App Router + TypeScript on Vercel, pnpm            | 0001 |
 | Tooling           | ESLint + Prettier, Vitest, tsx for scripts                    | 0002 |
-| DB                | Postgres + Drizzle ORM (provider open; Supabase recommended)  | 0003 |
-| Blob              | S3-compatible behind a small interface (provider open)        | 0004 |
+| DB                | Postgres on Supabase (plain Postgres) + Drizzle ORM           | 0003 |
+| Blob              | Cloudflare R2 via its S3 API, behind a small interface        | 0004 |
 | Dense vectors     | Pinecone document index, our OpenAI vectors (`dense_vector`)  | 0005 |
 | Sparse vectors    | Separate Pinecone document index, `sparse_embed` hosted model | 0006 |
 | Fusion            | Weighted Reciprocal Rank Fusion, **written by us**            | 0007 |

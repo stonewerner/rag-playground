@@ -35,7 +35,8 @@ that broken work cannot merge.
 
 ## Technical notes
 
-- Needs the GitHub repo (open question Q10).
+- Repo: `git@github.com:stonewerner/rag-playground.git` (Q10). Nothing is pushed yet; the first
+  push to `main` needs Stone's go-ahead. GitHub reported the repo as public on 2026-11-08.
 - Use `pnpm/action-setup` and `actions/setup-node` with `cache: pnpm`; pin action major versions.
 
 ## Test and eval plan

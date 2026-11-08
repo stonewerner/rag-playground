@@ -15,8 +15,9 @@ session ID and `db: ok`, CI is green, and the cleanup cron is scheduled.
 
 ## Before starting
 
-Answer open questions Q1 (Postgres provider), Q2 (blob provider), and Q10 (GitHub repo and Vercel).
-Q7 and Q8 (TTL, caps) can use the recommended defaults.
+All Phase 0 questions are resolved (2026-11-08): Supabase Postgres (Q1), Cloudflare R2 (Q2), 72 h
+guest TTL (Q7), default caps (Q8), existing GitHub remote + Vercel Hobby (Q10). Stone needs to
+create the Supabase project, R2 bucket and token, and Vercel project, and confirm the first push.
 
 ## Stories
 

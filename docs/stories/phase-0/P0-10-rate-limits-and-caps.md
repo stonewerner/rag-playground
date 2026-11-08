@@ -36,7 +36,8 @@ no visitor can run up costs or exhaust shared quotas.
 - [ ] Concurrent `hit()` calls never exceed the limit (integration test with parallel calls).
 - [ ] Each guard has unit tests for allow and deny paths.
 - [ ] 429 response shape documented and tested.
-- [ ] Open questions Q8 values confirmed or adjusted in `caps.ts` and `docs/architecture.md`.
+- [ ] Defaults in `caps.ts` match the confirmed values (open questions Q8, resolved) and
+      `docs/architecture.md` §15.
 - [ ] `pnpm check` passes.
 
 ## Technical notes
