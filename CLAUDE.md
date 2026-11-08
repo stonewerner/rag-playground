@@ -148,6 +148,7 @@ Keep `src/pipeline/` free of Next.js imports so it runs headless (scripts, tests
 | `pnpm typecheck` | `tsc --noEmit`                                     |
 | `pnpm format`    | Prettier write                                     |
 | `pnpm test`      | Vitest (single run); `pnpm test:watch` to watch    |
+| `pnpm env:check` | Validate `.env.local` (all groups, or `db sec` …)  |
 
 Planned (stories add these; update this table when they land): `pnpm db:generate`,
 `pnpm db:migrate` (P0-03), `pnpm pinecone:setup` (P0-09), `pnpm edgar:fetch` (P1-03),

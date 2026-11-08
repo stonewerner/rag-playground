@@ -28,7 +28,7 @@ any time.
 
 | ID                                                      | Title                                  | Status | Size | Depends on                 | ★   | Summary                                                            |
 | ------------------------------------------------------- | -------------------------------------- | ------ | ---- | -------------------------- | --- | ------------------------------------------------------------------ |
-| [P0-01](phase-0/P0-01-env-config-and-validation.md)     | Typed, validated environment config    | todo   | S    | —                          | ★   | Zod-validated server-only `env` module covering `.env.example`     |
+| [P0-01](phase-0/P0-01-env-config-and-validation.md)     | Typed, validated environment config    | done   | S    | —                          | ★   | Zod-validated server-only `env` module covering `.env.example`     |
 | [P0-02](phase-0/P0-02-ci-pipeline.md)                   | CI pipeline on GitHub Actions          | todo   | S    | P0-01                      |     | `pnpm check` + build on every push and PR                          |
 | [P0-03](phase-0/P0-03-postgres-drizzle-setup.md)        | Postgres connection and Drizzle setup  | todo   | M    | P0-01                      | ★   | Provider provisioned, pooled client, migrations, `/api/health`     |
 | [P0-04](phase-0/P0-04-core-schema-v1.md)                | Core schema v1                         | todo   | M    | P0-03                      | ★   | All core tables in schema `app` with constraints and cascades      |
