@@ -1,6 +1,6 @@
 # Phase 0 — Foundations
 
-**Status:** in-progress (1/11 done) · **Stories:** 11
+**Status:** in-progress (1/11 done, P0-02 in review) · **Stories:** 11
 
 ## Goal
 

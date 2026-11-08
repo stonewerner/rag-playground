@@ -145,7 +145,7 @@ Keep `src/pipeline/` free of Next.js imports so it runs headless (scripts, tests
 | `pnpm build`     | Production build                                   |
 | `pnpm check`     | lint + typecheck + format check + tests (the gate) |
 | `pnpm lint`      | ESLint                                             |
-| `pnpm typecheck` | `tsc --noEmit`                                     |
+| `pnpm typecheck` | `next typegen && tsc --noEmit`                     |
 | `pnpm format`    | Prettier write                                     |
 | `pnpm test`      | Vitest (single run); `pnpm test:watch` to watch    |
 | `pnpm env:check` | Validate `.env.local` (all groups, or `db sec` …)  |

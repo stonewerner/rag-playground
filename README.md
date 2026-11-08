@@ -1,5 +1,7 @@
 # RAG Playground
 
+[![CI](https://github.com/stonewerner/rag-playground/actions/workflows/ci.yml/badge.svg)](https://github.com/stonewerner/rag-playground/actions/workflows/ci.yml)
+
 A retrieval evaluation lab. Index documents under different chunking and embedding configs, turn
 retrieval knobs (top-k, hybrid alpha, reranking, thresholds), and measure what changed with
 recall@k, MRR, and nDCG@k against a labeled benchmark of SEC 10-K filings.

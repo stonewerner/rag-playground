@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# CI only reads the repo. Nothing here needs a broader token.
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # Before setup-node, because `cache: pnpm` needs pnpm on PATH. No `version` input: the action
+      # takes it from `packageManager` in package.json, so there is one place to bump it.
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - run: pnpm check
+
+      # Runs with an empty environment on purpose: no dummy values and no lenient build mode.
+      # `env` (src/lib/env.ts) validates on first property access, not at import, so `next build`
+      # needs no secrets unless code that runs during prerendering reads `env`. That would be a bug
+      # (P0-01: read `env` only in dynamic code), and an empty environment makes it fail here with
+      # EnvValidationError. Dummy values would hide it and could end up in prerendered output.
+      # Runtime validation stays strict.
+      - run: pnpm build
